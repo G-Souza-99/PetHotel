@@ -7,13 +7,17 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
+  <div class="navbar-light">
+    <div class="navbar-nav">
+      <%= link_to "Houses", new_user_session_path, class: "nav-item nav-link align-items-center justify-content-center" %>
+
+    </div>
+  </div>
+
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
-        </li>
         <li class="nav-item">
           <%= link_to "Messages", "#", class: "nav-link" %>
         </li>
