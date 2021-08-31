@@ -7,5 +7,5 @@ class User < ApplicationRecord
   has_many :places, dependent: :destroy
   has_many :orders
 
-  validates :name, :email, presence: true, uniqueness: true
+  validates :email, presence: true
 end

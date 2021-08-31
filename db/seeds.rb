@@ -7,11 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
+puts "Destroying seeds...."
 Place.destroy_all
 
 20.times do
-  Place.create(
+  Place.create!(
+    user_id: 1,
     name: Faker::Company.name,
     address: Faker::Address.street_name
   )
 end
+
+puts "Created Seeds! 🎆"
