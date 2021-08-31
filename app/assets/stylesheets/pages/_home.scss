@@ -1,1 +1,8 @@
-// Specific CSS for your home-page
+// Specific CSS for your homec
+a{
+  text-decoration:none !important;
+  color:black;
+  &:hover{
+    color:black;
+  }
+}
