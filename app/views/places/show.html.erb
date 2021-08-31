@@ -1,2 +1,6 @@
 <h2><%= @place.name %></h2>
 <p><%= @place.address %></p>
+
+<%= link_to "⬅️ Back", places_path %>
+<%= link_to "📝 Edit", edit_place_path(@place) %>
+<%= link_to "🗑 Delete", place_path(@place), method: :delete %>
