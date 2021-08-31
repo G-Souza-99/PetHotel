@@ -10,10 +10,8 @@ require 'faker'
 Place.destroy_all
 
 20.times do
-  Place.create([
-  {
+  Place.create(
     name: Faker::Company.name,
     address: Faker::Address.street_name
-  }
-  ])
+  )
 end
