@@ -1,6 +1,6 @@
-<h2>Edit place <%= place.name %></h2>
+<h2>Edit place <%= @place.name %></h2>
 <%= simple_form_for @place do |f| %>
   <%= f.input :name %>
-  <%= f.input :adress %>
+  <%= f.input :address %>
   <%= f.submit class: 'btn btn-flat' %>
 <% end %>
