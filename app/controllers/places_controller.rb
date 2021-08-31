@@ -6,6 +6,7 @@ class PlacesController < ApplicationController
   end
 
   def show
+    @order = Order.new(place: @place, user: current_user)
   end
 
   def new
