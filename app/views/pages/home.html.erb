@@ -1,2 +1,30 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class ="cover mb-4 d-flex align-items-center justify-content-center">
+  <div class="text-center text-white">
+    <h1>Find a place for your pets to:</h1>
+    <h3 class="typed-js"></h3>
+  </div>
+</div>
+
+<div class="container py-5">
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <h3 class="mb-0">Explore our houses!</h3>
+  </div>
+  <div class="row">
+    <%# to iterate below %>
+
+    <% @places.take(3).each do |place| %>
+      <%= link_to place_path(place) do %>
+        <div class="co-12 colsm-6 col-md-4 mb-3">
+          <div class="card-product">
+           <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+            <div class="card-product-infos">
+              <h2 class="text-decoration-none"><%= place.name %></h2>
+              <p><%= place.address %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <p class="">Find me in app/views/pages/home.html.erb</p>
+</div>
