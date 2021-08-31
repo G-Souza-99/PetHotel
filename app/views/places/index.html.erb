@@ -1,0 +1,5 @@
+<ul>
+  <% @places.each do |place| %>
+    <li><%= link_to place.name, places_path(@place) %></li>
+  <% end %>
+</ul>

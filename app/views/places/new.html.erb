@@ -1,0 +1,6 @@
+<h3>Create a new place</h3>
+<%= simple_form_for @place do |f| %>
+  <%= f.input :name, placeholder: 'Casinha da mae' %>
+  <%= f.input :adress, placeholder: 'rua da mae'%>
+  <%= f.submit class: 'btn btn-flat' %>
+<% end %>
