@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
+Place.destroy_all
+
+20.times do
+  Place.create([
+  {
+    name: Faker::Company.name,
+    address: Faker::Address.street_name
+  }
+  ])
+end
