@@ -1,0 +1,7 @@
+<h1> Places to Stay </h1>
+
+<ul>
+  <% @places.each do |place| %>
+    <li><%= link_to place.name, place_path(place) %></li>
+  <% end %>
+</ul>

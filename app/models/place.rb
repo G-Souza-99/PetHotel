@@ -1,6 +1,6 @@
 class Place < ApplicationRecord
   belongs_to :user
-  belongs_to :order
+  has_many :orders
 
   validates :address, :name, presence: true
 end
