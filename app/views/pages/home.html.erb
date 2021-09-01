@@ -1,30 +1,46 @@
 <div class ="cover mb-4 d-flex align-items-center justify-content-center">
-  <div class="text-center text-white">
+  <div class="text-center text-white justify-content-center">
     <h1>Find a place for your pets to:</h1>
     <h3 class="typed-js"></h3>
+    <button type="button" class="btn btn-danger"><%= link_to "Get Started", places_path  %></button>
   </div>
 </div>
 
 <div class="container py-5">
   <div class="d-flex align-items-center justify-content-between mb-3">
-    <h3 class="mb-0">Explore our houses!</h3>
+    <%# <h3 class="mb-0">Our Features!</h3> %>
   </div>
   <div class="row">
-    <%# to iterate below %>
-
-    <% @places.take(3).each do |place| %>
-      <%= link_to place_path(place) do %>
-        <div class="co-12 colsm-6 col-md-4 mb-3">
-          <div class="card-product">
-           <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-            <div class="card-product-infos">
-              <h2 class="text-decoration-none"><%= place.name %></h2>
-              <p><%= place.address %></p>
-            </div>
-          </div>
-        <% end %>
+    <div class="co-12 colsm-6 col-md-4 mb-3">
+      <div class="demo">
+      <div class="content1">
+        <%= image_tag("landingpage/dog_food") %>
+        <h2>Feed Your Cuties</h2>
+        <p>We will feed your pets exactly the way the way you do it</p>
       </div>
-    <% end %>
+      </div>
+    </div>
+    <div class="co-12 colsm-6 col-md-4 mb-3">
+      <div class="demo">
+        <div class="content2">
+          <%= image_tag("landingpage/cat_holiday") %>
+          <div class="content-text">
+            <h2>Leave Your Cuties</h2>
+            <p>For when you go on holidays and have no-one to take care of them</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="co-12 colsm-6 col-md-4 mb-3">
+      <div class="demo">
+        <div class="content3">
+          <%= image_tag("landingpage/happy_bird") %>
+          <div class="content-text">
+            <h2>Cuties will be happy</h2>
+            <p>We guarantee your pets will be taken care of and happy!</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <p class="">Find me in app/views/pages/home.html.erb</p>
 </div>
