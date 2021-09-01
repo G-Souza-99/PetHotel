@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="offset-md-4 col-4">
-      <h2 class="text-center">Log in</h2>
+      <h2 class="text-center my-3">Log in</h2>
       <%= simple_form_for(resource, as: resource_name, url:
       session_path(resource_name)) do |f| %>
       <div class="form-inputs">
@@ -16,8 +16,10 @@
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable?
         %>
       </div>
-      <div class="form-actions d-flex align-content-center">
-        <%= f.button :submit, "Log in", class:"button mx-auto" %>
+      <div class="form-actions">
+        <div class="text-center">
+          <%= f.button :submit, "Log in", class:"btn btn-danger mb-3" %>
+        </div>
       </div>
       <% end %>
 
