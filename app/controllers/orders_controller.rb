@@ -3,12 +3,14 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    authorize @order
   end
 
   def create
     @order = Order.new(order_params)
     @order.place = @place
     @order.user = current_user
+    authorize @order
     if @order.save
       redirect_to place_order_path(@place, @order)
     else
