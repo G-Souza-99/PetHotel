@@ -3,6 +3,7 @@ class PlacesController < ApplicationController
 
   def index
     @places = Place.all
+    @places = policy_scope(Place).order(created_at: :desc)
   end
 
   def show
@@ -11,11 +12,13 @@ class PlacesController < ApplicationController
 
   def new
     @place = Place.new
+    authorize @place
   end
 
   def create
     @place = Place.new(place_params)
     @place.user = current_user
+    authorize @place
     if @place.save
       redirect_to place_path(@place)
     else
@@ -48,5 +51,6 @@ class PlacesController < ApplicationController
 
   def set_place
     @place = Place.find(params[:id])
+    authorize @place
   end
 end

@@ -2,7 +2,9 @@
 
   <div class="text-center">
     <h1 class="mt-4 mb-3"> Find your pet a love nest </h1>
-    <%= link_to '+ Add Place', new_place_path, class:'btn btn-danger mb-4' %>
+    <% if policy(Place).create? %>
+      <%= link_to '+ Add Place', new_place_path, class:'btn btn-danger mb-4' %>
+    <% end %>
   </div>
 
   <div class="row">

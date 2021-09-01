@@ -2,8 +2,12 @@
 <p><%= @place.address %></p>
 
 <%= link_to "⬅️ Back", places_path %>
-<%= link_to "📝 Edit", edit_place_path(@place) %>
-<%= link_to "🗑 Delete", place_path(@place), method: :delete %>
+<% if policy(@place).edit? %>
+  <%= link_to "📝 Edit", edit_place_path(@place) %>
+<% end %>
+<% if policy(@place).destroy? %>
+  <%= link_to "🗑 Delete", place_path(@place), method: :delete %>
+<% end %>
 
 <h3>Select Dates</h3>
 <%= simple_form_for [@place, @order] do |f| %>
