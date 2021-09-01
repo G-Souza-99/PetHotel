@@ -6,6 +6,7 @@ class PlacesController < ApplicationController
   end
 
   def show
+    @order = Order.new(place: @place, user: current_user)
   end
 
   def new
@@ -14,6 +15,7 @@ class PlacesController < ApplicationController
 
   def create
     @place = Place.new(place_params)
+    @place.user = current_user
     if @place.save
       redirect_to place_path(@place)
     else
