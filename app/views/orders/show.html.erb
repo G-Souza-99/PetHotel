@@ -1,10 +1,17 @@
-<h1>Booking Summary</h1>
-<h3>Thank you, your reservation is confirmed!</h3>
-<p>We are looking forward to see you.</p>
-<p>Where are your reservation details:</p>
-<ul>
-<li>Your reservation at <%= @place.name %></li>
-<li>Arrival <%= @order.checkin %></li>
-<li>Departure <%= @order.checkout %></li>
-<li>Total 250€</li>
-</ul>
+<div class="container">
+  <div class="showplace">
+  <div class="text-center row">
+    <div class="form-info offset-md-3 mt-5 col-6 bwidth">
+      <h1>Booking Summary</h1>
+      <h3>Thank you, your reservation is<h3 style="color:red">confirmed!</h3></h3>
+      <p>We are looking forward to see you.</p>
+      <p>Where are your reservation details:</p>
+      <ul class="list-unstyled">
+        <li>Your reservation at <%= @place.name %></li>
+        <li>Arrival <%= @order.checkin %></li>
+        <li>Departure <%= @order.checkout %></li>
+        <li>Total 250€</li>
+      </ul>
+    </div>
+  </div>
+</div>
