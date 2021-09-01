@@ -1,4 +1,13 @@
-<link rel="stylesheet" href="new.css" />
+<head>
+  <link rel="scss" href="../../../assets/stylesheets/pages/_new.scss" />
+  <link rel="scss" href="../../../assets/stylesheets/pages/_button.scss" />
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous"
+  />
+</head>
 
 <h2>Sign up</h2>
 
@@ -7,16 +16,22 @@ registration_path(resource_name)) do |f| %> <%= f.error_notification %>
 
 <div class="form-inputs">
   <%= f.input :email, required: true, autofocus: true, input_html: {
-  autocomplete: "email", :value => 'user@domain.com' } %> <%= f.input :password,
-  required: true, hint: ("#{@minimum_password_length} characters minimum"),
-  input_html: { autocomplete: "new-password", :value => "**********" } %> <%=
-  f.input :password_confirmation, required: true, input_html: { autocomplete:
-  "new-password", :value => "**********" } %>
+  autocomplete: "email", :value => 'user@domain.com' } %> <br />
+  <%= f.input :password, required: true, hint: ("#{@minimum_password_length}
+  characters minimum"), input_html: { autocomplete: "new-password", :value =>
+  "**********" } %> <br />
+  <%= f.input :password_confirmation, required: true, input_html: {
+  autocomplete: "new-password", :value => "**********" } %>
 </div>
 
+<br />
+
 <div class="form-actions">
-  <button><%= f.button :submit, "Sign up" %></button>
+  <button class="button"><%= f.button :submit, "Sign up" %></button>
 </div>
+
+<br />
+
 <div class="devise-shared-links">
   <% end %> <%= render "devise/shared/links" %>
 </div>
