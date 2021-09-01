@@ -13,7 +13,7 @@
       <% if user_signed_in? %>
         <div class="navbar-light">
           <div class="navbar-nav">
-            <%= @user.email %>
+            <%= current_user.email %>
           </div>
         </div>
         <li class="nav-item dropdown">
