@@ -1,10 +1,32 @@
+<div class="container">
 
-<h1> Places to Stay </h1>
+  <h1> Places to Stay </h1>
 
-<ul>
-  <% @places.each do |place| %>
-    <li><%= link_to place.name, place_path(place) %></li>
-  <% end %>
-</ul>
 
-<%= link_to '+ Add Place', new_place_path %>
+
+  <div class="row">
+      <% @places.each do |place| %>
+          <%= link_to place_path(place) do %>
+          <div class="co-12 colsm-6 col-md-4 mb-3">
+              <div class="card-trip">
+                <%= image_tag "house_predifined" %>
+                <div class="card-trip-infos">
+                  <div>
+                    <h2><%= place.name %></h2>
+                    <p><%= place.address %></p>
+                  </div>
+                  <h2 class="card-trip-pricing">50€</h2>
+                  <img src="avatar" class="card-trip-user avatar-bordered" />
+                </div>
+          </div>
+          <% end %>
+        </div>
+      <% end %>
+  </div>
+
+
+
+
+
+  <%= link_to '+ Add Place', new_place_path %>
+</div>
