@@ -1,6 +1,10 @@
 <h2><%= @place.name %></h2>
 <p><%= @place.address %></p>
 
+<%= link_to "⬅️ Back", places_path %>
+<%= link_to "📝 Edit", edit_place_path(@place) %>
+<%= link_to "🗑 Delete", place_path(@place), method: :delete %>
+
 <h3>Select Dates</h3>
 <%= simple_form_for [@place, @order] do |f| %>
   <%= f.input :checkin, :label => 'Check-in' %>
@@ -8,7 +12,3 @@
   <%= f.input :guest,  as: :numeric, :label => 'Number of Guests' %>
   <%= f.submit 'Book Place' %>
 <% end %>
-
-<%= link_to "⬅️ Back", places_path %>
-<%= link_to "📝 Edit", edit_place_path(@place) %>
-<%= link_to "🗑 Delete", place_path(@place), method: :delete %>
