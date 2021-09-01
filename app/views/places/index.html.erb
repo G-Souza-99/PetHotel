@@ -1,8 +1,9 @@
 <div class="container">
 
-  <h1> Places to Stay </h1>
-
-
+  <div class="text-center">
+    <h1 class="mt-4 mb-3"> Find your pet a love nest </h1>
+    <%= link_to '+ Add Place', new_place_path, class:'btn btn-danger mb-4' %>
+  </div>
 
   <div class="row">
       <% @places.each do |place| %>
@@ -15,18 +16,11 @@
                     <h2><%= place.name %></h2>
                     <p><%= place.address %></p>
                   </div>
-                  <h2 class="card-trip-pricing"><%= rand(20..150) %>€</h2>
-                  <img src="avatar" class="card-trip-user avatar-bordered" />
+                  <h2 class="card-trip-pricing">50€</h2>
                 </div>
           </div>
           <% end %>
         </div>
       <% end %>
   </div>
-
-
-
-
-
-  <%= link_to '+ Add Place', new_place_path %>
 </div>
