@@ -1,8 +1,16 @@
 // Specific CSS for your homec
 a{
   text-decoration:none !important;
-  color:black;
+  color:white;
   &:hover{
-    color:black;
+    color:white;
+  }
+}
+.btn-danger, .btn-danger:active, .btn-danger:visited {
+  background-color: #e81e35 !important;
+  border-radius: 12px !important;
+  &:hover{
+    background-color: #ff6584 !important;
+    border-color: #ff6584 !important;
   }
 }
