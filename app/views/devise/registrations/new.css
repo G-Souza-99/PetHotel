@@ -1,31 +1,27 @@
 h2 {
   margin-left: auto;
   margin-right: auto;
-  width: 500px;
+  width: 40%;
   text-align: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .form-inputs {
   margin-left: auto;
   margin-right: auto;
-  width: 500px;
-  text-align: left;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width: 40%;
+  text-align: center;
 }
 
 .form-actions {
   margin-left: auto;
   margin-right: auto;
-  width: 100;
+  width: 40%;
   text-align: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .devise-shared-links {
   margin-left: auto;
   margin-right: auto;
-  width: 100;
+  width: 40%;
   text-align: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
