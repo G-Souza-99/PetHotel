@@ -2,8 +2,7 @@ class OrdersController < ApplicationController
   before_action :find_place
 
   def show
-    @order = Order.new(order_params)
-    @order.user = current_user
+    @order = Order.find(params[:id])
   end
 
   def create
@@ -11,7 +10,7 @@ class OrdersController < ApplicationController
     @order.place = @place
     @order.user = current_user
     if @order.save
-      redirect_to places_path #need to change this to redirect to views/order/show
+      redirect_to place_order_path(@place, @order)
     else
       render '/places/show'
     end
