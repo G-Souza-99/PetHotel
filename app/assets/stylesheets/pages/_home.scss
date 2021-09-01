@@ -6,11 +6,11 @@
     background-color: #ff6584 !important;
     border-color: #ff6584 !important;
   }
-  a{
-  text-decoration:none !important;
-  color:white;
-  &:hover{
+  a {
+    text-decoration:none !important;
     color:white;
+      &:hover {
+        color:white;
+    }
   }
-}
 }

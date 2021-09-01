@@ -3,15 +3,14 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-import Rails from "@rails/ujs"
-import Turbolinks from "turbolinks"
-import * as ActiveStorage from "@rails/activestorage"
-import "channels"
+import Rails from "@rails/ujs";
+import Turbolinks from "turbolinks";
+import * as ActiveStorage from "@rails/activestorage";
+import "channels";
 
-Rails.start()
-Turbolinks.start()
-ActiveStorage.start()
-
+Rails.start();
+Turbolinks.start();
+ActiveStorage.start();
 
 // ----------------------------------------------------
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
@@ -25,7 +24,7 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { initTyped } from "./plugins/init_typedjs";
 
-document.addEventListener('turbolinks:load', () => {
+document.addEventListener("turbolinks:load", () => {
   // Call your functions here, e.g:
   // initSelect2();
   initTyped();
