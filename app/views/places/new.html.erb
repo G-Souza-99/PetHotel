@@ -1,6 +1,10 @@
-<h2>Create a new place</h2>
-<%= simple_form_for @place do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address %>
-  <%= f.submit class: 'btn btn-flat' %>
-<% end %>
+<div class="verysmallcontainer">
+  <h2 class="text-center mt-4 mb-3">Create a new place</h2>
+  <%= simple_form_for @place do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <div class="text-center mt-4">
+      <%= f.submit class:'btn btn-danger' %>
+    </div>
+  <% end %>
+</div>
