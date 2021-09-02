@@ -17,6 +17,8 @@
 }
 
 .navbar-nav .nav-item.active .nav-link,
-.navbar-nav .nav-item:hover .nav-link {
-  color: #e81e35
+.navbar-nav .nav-item:hover .nav-link,
+a.dropdown-item:active,
+a.dropdown-item:hover {
+  color: #e81e35;
 }
