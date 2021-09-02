@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2021_09_02_112421) do
     t.datetime "updated_at", precision: 6, null: false
     t.date "checkin"
     t.date "checkout"
-    t.string "guest"
+    t.integer "guest"
     t.index ["place_id"], name: "index_orders_on_place_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
