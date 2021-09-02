@@ -15,3 +15,8 @@
   padding-right: 15px;
   padding-top: 6px;
 }
+
+.navbar-nav .nav-item.active .nav-link,
+.navbar-nav .nav-item:hover .nav-link {
+  color: #e81e35
+}
