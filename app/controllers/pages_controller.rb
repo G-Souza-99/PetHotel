@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def home
-    @places = Place.all
+   @places = policy_scope(Place).order(created_at: :desc)
   end
 end
