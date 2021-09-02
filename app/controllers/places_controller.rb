@@ -15,6 +15,11 @@ class PlacesController < ApplicationController
     authorize @place
   end
 
+  def my_places
+    @places = Place.where(user: current_user)
+    authorize Place
+  end
+
   def create
     @place = Place.new(place_params)
     @place.user = current_user

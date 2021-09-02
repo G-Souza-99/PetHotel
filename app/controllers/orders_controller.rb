@@ -1,9 +1,14 @@
 class OrdersController < ApplicationController
-  before_action :find_place
+  before_action :find_place, only: %i[show create]
 
   def show
     @order = Order.find(params[:id])
     authorize @order
+  end
+
+  def index
+    # @orders = Order.where(user: current_user)
+    @orders = policy_scope(Order)
   end
 
   def create
