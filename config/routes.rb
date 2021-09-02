@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :users, only: %i[show]
   resources :places do
     resources :orders, only: %i[create show]
   end
