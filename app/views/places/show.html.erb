@@ -12,9 +12,9 @@
         <%= link_to "🗑 Delete", place_path(@place), method: :delete %>
       <% end %>
     </div>
-    
+
     <%# images of the page %>
-    
+
     <div class="img-cont col-md-12 col-12">
       <%= cl_image_tag @place.photo.key %>
     </div>
@@ -49,12 +49,6 @@
         </div>
       </div>
       <div class="col-md-5 col-12 form-info">
-        <% if policy(@place).edit? %>
-          <%= link_to "📝 Edit", edit_place_path(@place) %>
-        <% end %>
-        <% if policy(@place).destroy? %>
-          <%= link_to "🗑 Delete", place_path(@place), method: :delete %>
-        <% end %>
         <div class="booking-form sticky-bottom">
 
           <%= simple_form_for [@place, @order] do |f| %>
