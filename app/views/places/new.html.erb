@@ -3,6 +3,7 @@
   <%= simple_form_for @place do |f| %>
     <%= f.input :name %>
     <%= f.input :address %>
+    <%= f.input :photo, as: :file %>
     <div class="text-center mt-4">
       <%= f.submit class:'btn btn-danger' %>
     </div>

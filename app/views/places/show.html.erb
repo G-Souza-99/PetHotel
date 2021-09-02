@@ -5,10 +5,18 @@
       <h2><%= @place.name %></h2>
       <p><%= @place.address %></p>
       <%= link_to "⬅️ Back", places_path %>
+      <% if policy(@place).edit? %>
+      <%= link_to "📝 Edit", edit_place_path(@place) %>
+      <% end %>
+      <% if policy(@place).destroy? %>
+        <%= link_to "🗑 Delete", place_path(@place), method: :delete %>
+      <% end %>
     </div>
+    
     <%# images of the page %>
+    
     <div class="img-cont col-md-12 col-12">
-      <%= image_tag "house_predifined.jpg" %>
+      <%= cl_image_tag @place.photo.key %>
     </div>
     <div class="row mt-5">
       <div class="col-md-7 col-12 text-justify pr-5">
@@ -58,6 +66,7 @@
             </div>
           <% end %>
         </div>
+
       </div>
     </div>
   </div>
