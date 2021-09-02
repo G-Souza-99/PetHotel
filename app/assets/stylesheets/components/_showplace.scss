@@ -1,6 +1,6 @@
 .showplace{
   h2{
-    color:red;
+    color: #e81e35;
   }
 
   .img-cont{
@@ -12,12 +12,52 @@
     }
   }
   .form-info{
-    box-shadow: 0px 0px 4px black;
+    box-shadow: 0px 0px 4px #2c292a;
     border-radius: 16px;
     padding:50px;
     height:420px;
     position: sticky;
     top: 100px;
     text-decoration: none;
+  }
+
+}
+
+.sticky-bar{
+    display:none;
+  }
+@media (max-width: 450px) {
+  .showplace{
+    .form-info {
+      h3{
+        font-size: 1rem;
+      }
+      border-top: 1px solid black;
+      border-radius:0px;
+      box-shadow:none;
+      padding: 10px;
+      height: 0px;
+      width: 450px;
+      background-color: #F4F4F4;
+      position: sticky;
+      bottom: 0;
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .sticky-bar {
+    position: sticky;
+    bottom: 0;
+    display:block;
+    width: 100%;
+    padding: 1rem 8rem;
+    background-color: #F4F4F4;
+    border-top: 1px solid black;
+
+    .btn-danger {
+      width: 100%;
+    }
   }
 }
