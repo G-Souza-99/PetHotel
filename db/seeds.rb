@@ -7,16 +7,18 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Destroying seeds...."
+Order.destroy_all
 Place.destroy_all
+User.destroy_all
 
-User.create(
+user = User.create(
   email: "test@test.com",
   password: "123456"
 )
 
 20.times do
   place = Place.create!(
-    user_id: 1,
+    user_id: user.id,
     name: Faker::Company.name,
     address: Faker::Address.street_name
   )
