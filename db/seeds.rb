@@ -5,16 +5,24 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require 'faker'
 
 puts "Destroying seeds...."
 Place.destroy_all
 
+User.create(
+  email: "test@test.com",
+  password: "123456"
+)
+
 20.times do
-  Place.create!(
+  place = Place.create!(
     user_id: 1,
     name: Faker::Company.name,
     address: Faker::Address.street_name
+  )
+  place.photo.attach(
+    io: File.open(Rails.root.join("app/assets/images/house_predifined.jpg")),
+    filename: 'place.jpg'
   )
 end
 
