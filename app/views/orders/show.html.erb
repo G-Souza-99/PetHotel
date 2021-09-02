@@ -1,16 +1,16 @@
 <div class="container">
   <div class="showplace">
   <div class="text-center row">
-    <div class="form-info offset-md-3 mt-5 col-6 bwidth">
+    <div class="offset-md-3 mt-5 col-md-6 col-sm-12 bwidth">
       <h1>Booking Summary</h1>
       <h3>Thank you, your reservation is<h3 style="color:red">confirmed!</h3></h3>
       <p>We are looking forward to see you.</p>
       <p>Where are your reservation details:</p>
       <ul class="list-unstyled">
-        <li>Your reservation at <%= @place.name %></li>
+        <li>Your reservation at <strong><%= @place.name %></strong></li>
         <li>Arrival <%= @order.checkin %></li>
         <li>Departure <%= @order.checkout %></li>
-        <li>Total 250€</li>
+        <li>Total<strong><%= ((@order.checkout - @order.checkin)).to_i * 50%>€</strong></li>
       </ul>
       <%= link_to "⬅️ Back", :back %>
     </div>
