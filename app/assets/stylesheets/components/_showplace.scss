@@ -1,6 +1,6 @@
 .showplace{
   h2{
-    color:red;
+    color: #e81e35;
   }
 
   .img-cont{
@@ -12,12 +12,34 @@
     }
   }
   .form-info{
-    box-shadow: 0px 0px 4px black;
+    box-shadow: 0px 0px 4px #2c292a;
     border-radius: 16px;
     padding:50px;
     height:420px;
     position: sticky;
     top: 100px;
     text-decoration: none;
+  }
+}
+
+@media (max-width: 450px) {
+  .showplace{
+    height: 2700px;
+    .form-info {
+      h3{
+        font-size: 1rem;
+      }
+      border-top: 1px solid black;
+      border-radius:0px;
+      box-shadow:none;
+      padding: 10px;
+      left: 0px;
+      height: 340px;
+      width: 450px;
+      top: 330px;
+      bottom: 50px;
+      position:fixed;
+      background-color: #F4F4F4;
+    }
   }
 }
