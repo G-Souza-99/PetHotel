@@ -20,11 +20,14 @@
     top: 100px;
     text-decoration: none;
   }
+
 }
 
+.sticky-bar{
+    display:none;
+  }
 @media (max-width: 450px) {
   .showplace{
-    height: 2700px;
     .form-info {
       h3{
         font-size: 1rem;
@@ -33,13 +36,28 @@
       border-radius:0px;
       box-shadow:none;
       padding: 10px;
-      left: 0px;
-      height: 340px;
+      height: 0px;
       width: 450px;
-      top: 330px;
-      bottom: 50px;
-      position:fixed;
       background-color: #F4F4F4;
+      position: sticky;
+      bottom: 0;
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .sticky-bar {
+    position: sticky;
+    bottom: 0;
+    display:block;
+    width: 100%;
+    padding: 1rem 8rem;
+    background-color: #F4F4F4;
+    border-top: 1px solid black;
+
+    .btn-danger {
+      width: 100%;
     }
   }
 }

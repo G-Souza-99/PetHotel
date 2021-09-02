@@ -12,10 +12,33 @@
     </div>
     <div class="row mt-5">
       <div class="col-md-7 col-12 text-justify pr-5">
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non ultrices est, ultricies porta augue. Etiam non laoreet nisl, in imperdiet dui. Sed eget elit sit amet massa sodales mollis eget eget leo. Fusce interdum erat vitae lectus suscipit, sed ultrices purus suscipit. Pellentesque vel justo sapien. Suspendisse suscipit diam vel aliquam cursus. Vestibulum pulvinar eget velit sit amet consectetur. Proin sit amet viverra mauris, eu rutrum metus. Nam accumsan lacus ac diam tincidunt, sed dapibus nulla posuere. Nam pretium eros vitae leo semper sagittis. Vestibulum non sem pellentesque, egestas urna nec, ultricies sapien. Praesent nisl arcu, ultricies sed quam vitae, bibendum consectetur enim. Aenean porttitor risus nunc, sit amet lacinia eros ultrices quis. </p>
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non ultrices est, ultricies porta augue. Etiam non laoreet nisl, in imperdiet dui. Sed eget elit sit amet massa sodales mollis eget eget leo. Fusce interdum erat vitae lectus suscipit, sed ultrices purus suscipit. Pellentesque vel justo sapien. Suspendisse suscipit diam vel aliquam cursus. Vestibulum pulvinar eget velit sit amet consectetur. Proin sit amet viverra mauris, eu rutrum metus. Nam accumsan lacus ac diam tincidunt, sed dapibus nulla posuere. Nam pretium eros vitae leo semper sagittis. Vestibulum non sem pellentesque, egestas urna nec, ultricies sapien. Praesent nisl arcu, ultricies sed quam vitae, bibendum consectetur enim. Aenean porttitor risus nunc, sit amet lacinia eros ultrices quis. </p>
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non ultrices est, ultricies porta augue. Etiam non laoreet nisl, in imperdiet dui. Sed eget elit sit amet massa sodales mollis eget eget leo. Fusce interdum erat vitae lectus suscipit, sed ultrices purus suscipit. Pellentesque vel justo sapien. Suspendisse suscipit diam vel aliquam cursus. Vestibulum pulvinar eget velit sit amet consectetur. Proin sit amet viverra mauris, eu rutrum metus. Nam accumsan lacus ac diam tincidunt, sed dapibus nulla posuere. Nam pretium eros vitae leo semper sagittis. Vestibulum non sem pellentesque, egestas urna nec, ultricies sapien. Praesent nisl arcu, ultricies sed quam vitae, bibendum consectetur enim. Aenean porttitor risus nunc, sit amet lacinia eros ultrices quis. </p>
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non ultrices est, ultricies porta augue. Etiam non laoreet nisl, in imperdiet dui. Sed eget elit sit amet massa sodales mollis eget eget leo. Fusce interdum erat vitae lectus suscipit, sed ultrices purus suscipit. Pellentesque vel justo sapien. Suspendisse suscipit diam vel aliquam cursus. Vestibulum pulvinar eget velit sit amet consectetur. Proin sit amet viverra mauris, eu rutrum metus. Nam accumsan lacus ac diam tincidunt, sed dapibus nulla posuere. Nam pretium eros vitae leo semper sagittis. Vestibulum non sem pellentesque, egestas urna nec, ultricies sapien. Praesent nisl arcu, ultricies sed quam vitae, bibendum consectetur enim. Aenean porttitor risus nunc, sit amet lacinia eros ultrices quis. </p>
+        <p>  semper sagittis. Vestibulum non sem pellentesque, egestas urna nec, ultricies sapien. Praesent nisl arcu, ultricies sed quam vitae, bibendum consectetur enim. Aenean porttitor risus nunc, sit amet lacinia eros ultrices quis. </p>
+      </div>
+
+      <div class="modal fade" id="form-modal" tabindex="-1" role="dialog" aria-labelledby="form-modalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="text-center modal-title">Select Dates</h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <%= simple_form_for [@place, @order] do |f| %>
+                <%= f.input :checkin, :label => 'Check-in' %>
+                <%= f.input :checkout, :label => 'Check-out' %>
+                <%= f.input :guest,  as: :numeric, :label => 'Number of Guests' %>
+                <div class="text-center">
+                  <%= f.submit 'Book Place', class: 'btn btn-danger'%>
+                </div>
+              <% end %>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="col-md-5 col-12 form-info">
         <% if policy(@place).edit? %>
@@ -24,17 +47,21 @@
         <% if policy(@place).destroy? %>
           <%= link_to "🗑 Delete", place_path(@place), method: :delete %>
         <% end %>
+        <div class="booking-form sticky-bottom">
 
-        <h3 class="text-center">Select Dates</h3>
-        <%= simple_form_for [@place, @order] do |f| %>
-          <%= f.input :checkin, :label => 'Check-in' %>
-          <%= f.input :checkout, :label => 'Check-out' %>
-          <%= f.input :guest,  as: :numeric, :label => 'Number of Guests' %>
-          <div class="text-center">
-          <%= f.submit 'Book Place', class: 'btn btn-danger'%>
-          </div>
-        <% end %>
+          <%= simple_form_for [@place, @order] do |f| %>
+            <%= f.input :checkin, :label => 'Check-in' %>
+            <%= f.input :checkout, :label => 'Check-out' %>
+            <%= f.input :guest,  as: :numeric, :label => 'Number of Guests' %>
+            <div class="text-center">
+              <%= f.submit 'Book Place', class: 'btn btn-danger'%>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
+</div>
+<div class="sticky-bar" data-toggle="modal" data-target="#form-modal">
+  <button class="btn btn-danger click-me-js">Book Place</button>
 </div>
