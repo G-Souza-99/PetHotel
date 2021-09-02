@@ -36,3 +36,9 @@
       margin: 0;
     }
 }
+
+@media (max-width: 450px){
+  .mobile-responsive {
+    margin-left: 45px;
+  }
+}
