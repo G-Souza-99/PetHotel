@@ -34,8 +34,8 @@
             </div>
             <div class="modal-body">
               <%= simple_form_for [@place, @order] do |f| %>
-                <%= f.input :checkin, :label => 'Check-in' %>
-                <%= f.input :checkout, :label => 'Check-out' %>
+                <%= f.input :checkin, as: :date, :label => 'Check-in' %>
+                <%= f.input :checkout, as: :date, :label => 'Check-out' %>
                 <%= f.input :guest,  as: :numeric, :label => 'Number of Guests' %>
                 <div class="text-center">
                   <%= f.submit 'Book Place', class: 'btn btn-danger'%>
