@@ -16,9 +16,8 @@
   padding-top: 6px;
 }
 
-.navbar-nav .nav-item.active .nav-link,
-.navbar-nav .nav-item:hover .nav-link,
-a.dropdown-item:active,
-a.dropdown-item:hover {
-  color: #e81e35;
+a.dropdown-item:hover,
+a.dropdown-item:active {
+  background-color: #e81e35 !important;
+  color: white;
 }
