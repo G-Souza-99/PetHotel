@@ -1,0 +1,21 @@
+<div class="container">
+<h1>My Places</h1>
+  <div class="row">
+      <% @places.each do |place| %>
+          <%= link_to place_path(place) do %>
+          <div class="co-12 colsm-6 col-md-4 mb-3">
+              <div class="card-trip">
+                <%= cl_image_tag place.photo.key %>
+                <div class="card-trip-infos">
+                  <div>
+                    <h2><%= place.name %></h2>
+                    <p><%= place.address %></p>
+                  </div>
+                  <h2 class="card-trip-pricing">50€</h2>
+                </div>
+          </div>
+          <% end %>
+        </div>
+      <% end %>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>My Bookings</h1>
+  <div class="row">
+    <% @orders.each do |order| %>
+        <div class="co-12 colsm-6 col-md-4 mb-3">
+          <div class="card-product">
+            <%= cl_image_tag order.place.photo.key %>
+            <div class="card-product-infos">
+              <h2><%= order.place.name %></h2>
+              <p><%= order.checkin %> to <%= order.checkout %></p>
+              <p><strong>Total 50€</strong></p>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>

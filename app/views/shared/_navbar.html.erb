@@ -20,8 +20,8 @@
           <%= image_tag "avatar.svg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "My Profile", edit_user_registration_path, class: "dropdown-item" %>
-            <%= link_to "My Places", "#", class: "dropdown-item" %>
-            <%= link_to "My Bookings", "#", class: "dropdown-item" %>
+            <%= link_to "My Places", my_places_places_path , class: "dropdown-item" %>
+            <%= link_to "My Bookings", orders_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
