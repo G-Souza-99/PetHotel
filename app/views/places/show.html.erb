@@ -18,9 +18,11 @@
     <div class="img-cont col-md-12 col-12">
       <%= cl_image_tag @place.photo.key %>
     </div>
+
+    <%# map %>
+
     <div class="row mt-5">
       <div class="col-md-7 col-12 text-justify pr-5">
-        
         <p><%= @place.description %></p>
         <div id="map"
             style="width: 100%; height: 300px;"
@@ -29,6 +31,7 @@
         </div>
       </div>
 
+      <%# responsivness %>
 
       <div class="modal fade" id="form-modal" tabindex="-1" role="dialog" aria-labelledby="form-modalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -55,6 +58,9 @@
           </div>
         </div>
       </div>
+
+      <%# order form %>
+
       <% if @place.user != current_user %>
         <div class="col-md-5 col-12 form-info">
           <div class="booking-form sticky-bottom">
@@ -83,6 +89,9 @@
     </div>
   </div>
 </div>
+
+<%# responsivness %>
+
 <% if @place.user != current_user %>
   <div class="sticky-bar" data-toggle="modal" data-target="#form-modal">
     <button class="btn btn-danger click-me-js">Book Place</button>
