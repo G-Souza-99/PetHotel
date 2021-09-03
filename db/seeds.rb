@@ -16,11 +16,32 @@ user = User.create(
   password: "123456"
 )
 
+address = ["Avenida da Liberdade, Lisboa",
+           "Rua da Junqueira, Lisboa",
+           "Fontes Pereira de Melo, Lisboa",
+           "Rua do Salitre, Lisboa",
+           "Rua Júlio César Machado, Lisboa",
+           "Rua do Sacramento, Lisboa",
+           "Rua de São Bento, Lisboa",
+           "Rua da Oliveira do Carmo, Porto",
+           "Rua da Prata, Porto",
+           "Rua dos Fanqueiros, Lisboa",
+           "Estrada das Laranjeiras, Lisboa",
+           "Praça Carlos Alberto, Porto",
+           "Praça Marques de Pombal, Porto",
+           "Praça da República, Porto",
+           "Praça da Galiza, Porto",
+           "Praça da Ribeira, Porto",
+           "Rua Miguel Bombarda, Lisboa",
+           "Praça D. João I, Porto",
+           "Rua das Galerias de Paris, Porto",
+           "Praça dos Restauradores, Lisboa"]
+
 20.times do
   place = Place.create!(
     user_id: user.id,
     name: Faker::Company.name,
-    address: Faker::Address.street_name
+    address: address.sample
   )
   place.photo.attach(
     io: File.open(Rails.root.join("app/assets/images/house_predifined.jpg")),
