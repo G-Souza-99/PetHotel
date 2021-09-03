@@ -15,7 +15,7 @@
           <li>Departure <%= @order.checkout %></li>
           <li>Total<strong><%= (@order.checkout - @order.checkin).to_i * @place.price%> €</strong></li>
         </ul>
-        <%= link_to "⬅️ Back", :places_path %>
+        <%= link_to "⬅️ Back", places_path %>
       </div>
   </div>
 </div>
