@@ -7,7 +7,7 @@
       <p>We are looking forward to see you.</p>
       <p>Where are your reservation details:</p>
       <ul class="list-unstyled">
-        <li>Your reservation at <strong><%= @place.name %></strong></li>
+        <li>Your reservation at <strong><%= @place.name.capitalize %></strong></li>
         <li>Arrival <%= @order.checkin %></li>
         <li>Departure <%= @order.checkout %></li>
         <li>Total<strong><%= ((@order.checkout - @order.checkin)).to_i * 50%>€</strong></li>

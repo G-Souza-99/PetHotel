@@ -6,7 +6,7 @@
           <div class="card-product">
             <%= cl_image_tag order.place.photo.key %>
             <div class="card-product-infos">
-              <h2><%= order.place.name %></h2>
+              <h2><%= order.place.name.capitalize %></h2>
               <p><%= order.checkin %> to <%= order.checkout %></p>
               <p><strong>Total 50€</strong></p>
             </div>

@@ -2,8 +2,8 @@
   <div class="showplace">
     <%# Title of the page %>
     <div class="name-cont col-md-12 col-12">
-      <h2><%= @place.name %></h2>
-      <p><%= @place.address %></p>
+      <h2><%= @place.name.capitalize %></h2>
+      <p><%= @place.address.capitalize %></p>
       <%= link_to "⬅️ Back", places_path %>
       <% if policy(@place).edit? %>
       <%= link_to "📝 Edit", edit_place_path(@place) %>
