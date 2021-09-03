@@ -13,6 +13,8 @@ The idea was taken as an rbnb but for pets to stay instead of humans. This is a 
 
 The Team
 ------------------------
+All of us had a major impact in developing but these were the roles we often filled:
+
 Project Manager: [Gabriel Souza](https://github.com/G-Souza-99)
 
 Lead Developer: [Ines Louro](https://github.com/louro-ines) 
