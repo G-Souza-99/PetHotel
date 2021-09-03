@@ -3,5 +3,6 @@ class Place < ApplicationRecord
   has_many :orders
   has_one_attached :photo
 
-  validates :address, :name, presence: true
+  validates :address, :name, :description, :price, :photo, presence: true
+  validates :price, numericality: { greater_than_or_equal_to: 1 }
 end
