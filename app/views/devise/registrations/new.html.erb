@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class= "col-sm-12 col-md-6">
+    <div class="col-sm-12 col-md-6">
       <h2 class="text-center my-3">Sign up</h2>
 
       <%= simple_form_for(resource, as: resource_name, url:
@@ -8,7 +8,7 @@
 
       <div class="form-inputs">
         <%= f.input :email, required: true, autofocus: true, input_html: {
-        autocomplete: "email", :placeholder => 'user@domain.com'} %>
+        autocomplete: "email", :placeholder => "user@domain.com" } %>
         <%= f.input :password, required: true, hint:
         ("#{@minimum_password_length} characters minimum"), input_html: {
         autocomplete: "new-password", :placeholder => "**********" } %>

@@ -14,11 +14,11 @@
                 required: true,
                 autofocus: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password", :placeholder => ********** } %>
+                input_html: { autocomplete: "new-password", :placeholder => "**********" } %>
         <%= f.input :password_confirmation,
                 label: "Confirm your new password",
                 required: true,
-                input_html: { autocomplete: "new-password" } %>
+                input_html: { autocomplete: "new-password", :placeholder => "**********" } %>
       </div>
 
       <div class="form-actions">
