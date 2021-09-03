@@ -48,7 +48,7 @@
           </div>
         </div>
       </div>
-      <% if !@place.user == current_user %>
+      <% if @place.user != current_user %>
         <div class="col-md-5 col-12 form-info">
           <div class="booking-form sticky-bottom">
             <%= simple_form_for [@place, @order] do |f| %>
@@ -65,7 +65,7 @@
     </div>
   </div>
 </div>
-<% if !@place.user == current_user %>
+<% if @place.user != current_user %>
   <div class="sticky-bar" data-toggle="modal" data-target="#form-modal">
     <button class="btn btn-danger click-me-js">Book Place</button>
   </div>
