@@ -8,6 +8,12 @@ class PlacesController < ApplicationController
 
   def show
     @order = Order.new(place: @place, user: current_user)
+    @markers = [{
+      lat: @place.latitude,
+      lng: @place.longitude,
+      info_window: render_to_string(partial: "info_window", locals: { place: @place }),
+      image_url: helpers.asset_url('heart')
+    }]
   end
 
   def new

@@ -23,9 +23,11 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { initTyped } from "./plugins/init_typedjs";
+import {initMapbox} from "./plugins/init_mapbox";
 
 
 document.addEventListener("turbolinks:load", () => {
   // Call your functions here, e.g:
   initTyped();
+  initMapbox();
 });
