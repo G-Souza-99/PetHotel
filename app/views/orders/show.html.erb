@@ -3,14 +3,14 @@
   <div class="text-center row">
     <div class="offset-md-3 mt-5 col-md-6 col-sm-12 bwidth">
       <h1>Booking Summary</h1>
-      <h3>Thank you, your reservation is<h3 style="color:red">confirmed!</h3></h3>
+      <h3>Thank you, your reservation is<h3>confirmed!</h3></h3>
       <p>We are looking forward to see you.</p>
       <p>Where are your reservation details:</p>
       <ul class="list-unstyled">
         <li>Your reservation at <strong><%= @place.name %></strong></li>
         <li>Arrival <%= @order.checkin %></li>
         <li>Departure <%= @order.checkout %></li>
-        <li>Total<strong><%= ((@order.checkout - @order.checkin)).to_i * 50%>€</strong></li>
+        <li>Total<strong><%= ((@order.checkout - @order.checkin)).to_i * @place.price%>€</strong></li>
       </ul>
       <%= link_to "⬅️ Back", :back %>
     </div>

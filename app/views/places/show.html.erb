@@ -20,7 +20,7 @@
     </div>
     <div class="row mt-5">
       <div class="col-md-7 col-12 text-justify pr-5">
-        <p>  semper sagittis. Vestibulum non sem pellentesque, egestas urna nec, ultricies sapien. Praesent nisl arcu, ultricies sed quam vitae, bibendum consectetur enim. Aenean porttitor risus nunc, sit amet lacinia eros ultrices quis. </p>
+        <p><%= @place.description %></p>
       </div>
 
       <div class="modal fade" id="form-modal" tabindex="-1" role="dialog" aria-labelledby="form-modalLabel" aria-hidden="true">
@@ -36,7 +36,7 @@
               <%= simple_form_for [@place, @order] do |f| %>
                 <%= f.input :checkin, as: :date, :label => 'Check-in' %>
                 <%= f.input :checkout, as: :date, :label => 'Check-out' %>
-                <%= f.input :guest,  as: :numeric, :label => 'Number of Guests' %>
+                <%= f.input :guest,  as: :numeric, :label => 'Number of Pets' %>
                 <div class="text-center">
                   <%= f.submit 'Book Place', class: 'btn btn-danger'%>
                 </div>
@@ -48,23 +48,25 @@
           </div>
         </div>
       </div>
-      <div class="col-md-5 col-12 form-info">
-        <div class="booking-form sticky-bottom">
-
-          <%= simple_form_for [@place, @order] do |f| %>
-            <%= f.input :checkin, :label => 'Check-in' %>
-            <%= f.input :checkout, :label => 'Check-out' %>
-            <%= f.input :guest,  as: :numeric, :label => 'Number of Guests' %>
-            <div class="text-center">
-              <%= f.submit 'Book Place', class: 'btn btn-danger'%>
-            </div>
-          <% end %>
+      <% if !@place.user == current_user %>
+        <div class="col-md-5 col-12 form-info">
+          <div class="booking-form sticky-bottom">
+            <%= simple_form_for [@place, @order] do |f| %>
+              <%= f.input :checkin, :label => 'Check-in' %>
+              <%= f.input :checkout, :label => 'Check-out' %>
+              <%= f.input :guest,  as: :numeric, :label => 'Number of Guests' %>
+              <div class="text-center">
+                <%= f.submit 'Book Place', class: 'btn btn-danger'%>
+              </div>
+            <% end %>
+          </div>
         </div>
-
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
-<div class="sticky-bar" data-toggle="modal" data-target="#form-modal">
-  <button class="btn btn-danger click-me-js">Book Place</button>
-</div>
+<% if !@place.user == current_user %>
+  <div class="sticky-bar" data-toggle="modal" data-target="#form-modal">
+    <button class="btn btn-danger click-me-js">Book Place</button>
+  </div>
+<% end %>
