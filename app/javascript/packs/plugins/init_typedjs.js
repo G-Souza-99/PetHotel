@@ -5,18 +5,17 @@ const initTyped = () => {
   if (element) {
     new Typed(".typed-js", {
       strings: [
-        "Love Making",
-        "Smellin eachother",
-        "Ear Biting",
-        "Woof Woof time",
-        "Food Sharing",
-        "Running Around",
+        "Help Your Pet Stay Busy",
+        "Solution To Unexpected Travel",
+        "To Socialize Your Pet",
+        "Have Access To Outdoor Play Areas",
+        "To Release Some Energy",
         "And More . . .",
       ],
-      typeSpeed: 100,
+      typeSpeed: 70,
       loop: true,
       loopCount: Infinity,
-      showCursor: false
+      showCursor: false,
     });
   }
 };

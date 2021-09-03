@@ -1,5 +1,5 @@
 <div class="verysmallcontainer">
-  <h2 class="text-center mt-4 mb-3">Editing: <%= @place.name %></h2>
+  <h2 class="text-center mt-4 mb-3">Editing: <%= @place.name.capitalize %></h2>
   <%= simple_form_for @place do |f| %>
     <%= f.input :name %>
     <%= f.input :address %>
