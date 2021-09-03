@@ -2,8 +2,8 @@
   <div class="showplace">
     <%# Title of the page %>
     <div class="name-cont col-md-12 col-12">
-      <h2><%= @place.name %></h2>
-      <p><%= @place.address %></p>
+      <h2><%= @place.name.capitalize %></h2>
+      <p><%= @place.address.capitalize %></p>
       <%= link_to "⬅️ Back", places_path %>
       <% if policy(@place).edit? %>
       <%= link_to "📝 Edit", edit_place_path(@place) %>
@@ -20,7 +20,8 @@
     </div>
     <div class="row mt-5">
       <div class="col-md-7 col-12 text-justify pr-5">
-        <p>  semper sagittis. Vestibulum non sem pellentesque, egestas urna nec, ultricies sapien. Praesent nisl arcu, ultricies sed quam vitae, bibendum consectetur enim. Aenean porttitor risus nunc, sit amet lacinia eros ultrices quis. </p>
+        
+        <p><%= @place.description %></p>
         <div id="map"
             style="width: 100%; height: 300px;"
             data-markers="<%= @markers.to_json %>"
@@ -40,9 +41,9 @@
             </div>
             <div class="modal-body">
               <%= simple_form_for [@place, @order] do |f| %>
-                <%= f.input :checkin, :label => 'Check-in' %>
-                <%= f.input :checkout, :label => 'Check-out' %>
-                <%= f.input :guest,  as: :numeric, :label => 'Number of Guests' %>
+                <%= f.input :checkin, as: :date, :label => 'Check-in' %>
+                <%= f.input :checkout, as: :date, :label => 'Check-out' %>
+                <%= f.input :guest,  as: :numeric, :label => 'Number of Pets' %>
                 <div class="text-center">
                   <%= f.submit 'Book Place', class: 'btn btn-danger'%>
                 </div>
@@ -54,22 +55,36 @@
           </div>
         </div>
       </div>
-      <div class="col-md-5 col-12 form-info">
-        <div class="booking-form sticky-bottom">
-
-          <%= simple_form_for [@place, @order] do |f| %>
-            <%= f.input :checkin, :label => 'Check-in' %>
-            <%= f.input :checkout, :label => 'Check-out' %>
-            <%= f.input :guest,  as: :numeric, :label => 'Number of Guests' %>
-            <div class="text-center">
-              <%= f.submit 'Book Place', class: 'btn btn-danger'%>
-            </div>
-          <% end %>
+      <% if @place.user != current_user %>
+        <div class="col-md-5 col-12 form-info">
+          <div class="booking-form sticky-bottom">
+            <%= simple_form_for [@place, @order] do |f| %>
+              <%= f.label :checkin, 'Check-in' %>
+              <br>
+              <%= f.date_field :checkin, min: Date.today %>
+              <br>
+              <%= f.label :checkout, 'Check-out' %>
+              <br>
+              <%= f.date_field :checkout %>
+              <br>
+              <% if @order.errors.any? %>
+                <% @order.errors[:base].each do |msg| %>
+                  <%= msg %>
+                <% end %>
+              <% end %>
+              <%= f.input :guest,  as: :numeric, :label => 'Number of Guests' %>
+              <div class="text-center">
+                <%= f.submit 'Book Place', class: 'btn btn-danger'%>
+              </div>
+            <% end %>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
-<div class="sticky-bar" data-toggle="modal" data-target="#form-modal">
-  <button class="btn btn-danger click-me-js">Book Place</button>
-</div>
+<% if @place.user != current_user %>
+  <div class="sticky-bar" data-toggle="modal" data-target="#form-modal">
+    <button class="btn btn-danger click-me-js">Book Place</button>
+  </div>
+<% end %>

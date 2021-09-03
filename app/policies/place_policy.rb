@@ -9,6 +9,10 @@ class PlacePolicy < ApplicationPolicy
     return true
   end
 
+  def my_places?
+    true
+  end
+
   def show?
     true
   end

@@ -11,7 +11,13 @@
   width: 90px;
 }
 .navbar-nav {
-  color: lightgrey;
+  color: black;
   padding-right: 15px;
   padding-top: 6px;
+}
+
+a.dropdown-item:hover,
+a.dropdown-item:active {
+  background-color: #e81e35 !important;
+  color: white;
 }
