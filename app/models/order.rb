@@ -10,7 +10,7 @@ class Order < ApplicationRecord
 
   def end_date_is_after_start_date?
     if checkin.present? && checkout.present? && checkout < checkin
-      self.errors[:base] << "cannot be before the start date"
+      self.errors[:base] << "Check-out cannot be before Check-in"
     end
   end
 end
