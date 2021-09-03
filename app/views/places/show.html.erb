@@ -52,8 +52,19 @@
         <div class="col-md-5 col-12 form-info">
           <div class="booking-form sticky-bottom">
             <%= simple_form_for [@place, @order] do |f| %>
-              <%= f.input :checkin, :label => 'Check-in' %>
-              <%= f.input :checkout, :label => 'Check-out' %>
+              <%= f.label :checkin, 'Check-in' %>
+              <br>
+              <%= f.date_field :checkin, min: Date.today %>
+              <br>
+              <%= f.label :checkout, 'Check-out' %>
+              <br>
+              <%= f.date_field :checkout %>
+              <br>
+              <% if @order.errors.any? %>
+                <% @order.errors[:base].each do |msg| %>
+                  <%= msg %>
+                <% end %>
+              <% end %>
               <%= f.input :guest,  as: :numeric, :label => 'Number of Guests' %>
               <div class="text-center">
                 <%= f.submit 'Book Place', class: 'btn btn-danger'%>

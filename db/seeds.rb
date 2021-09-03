@@ -17,7 +17,7 @@ user = User.create(
 )
 
 20.times do
-  place = Place.create!(
+  place = Place.new(
     user_id: user.id,
     name: Faker::Company.name,
     address: Faker::Address.street_name,
@@ -28,6 +28,7 @@ user = User.create(
     io: File.open(Rails.root.join("app/assets/images/house_predifined.jpg")),
     filename: 'place.jpg'
   )
+  place.save
 end
 
 puts "Created Seeds! 🎆"

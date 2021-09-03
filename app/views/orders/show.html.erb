@@ -10,7 +10,7 @@
         <li>Your reservation at <strong><%= @place.name %></strong></li>
         <li>Arrival <%= @order.checkin %></li>
         <li>Departure <%= @order.checkout %></li>
-        <li>Total<strong><%= ((@order.checkout - @order.checkin)).to_i * @place.price%>€</strong></li>
+        <li>Total<strong><%= (@order.checkout - @order.checkin).to_i * @place.price%>€</strong></li>
       </ul>
       <%= link_to "⬅️ Back", :back %>
     </div>
