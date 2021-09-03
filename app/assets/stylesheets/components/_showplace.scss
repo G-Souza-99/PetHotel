@@ -1,12 +1,9 @@
 .showplace{
-  h2{
-    color: #e81e35;
-  }
 
   .img-cont{
     width: 1100px;
     img{
-      height: 200px;
+      height: 500px;
       width: 100%;
       object-fit: cover;
     }
@@ -14,8 +11,8 @@
   .form-info{
     box-shadow: 0px 0px 4px #2c292a;
     border-radius: 16px;
-    padding:50px;
-    height:380px;
+    padding: 50px 40px;
+    height:390px;
     position: sticky;
     top: 100px;
     text-decoration: none;
@@ -60,4 +57,9 @@
       width: 100%;
     }
   }
+}
+
+.message_error{
+  font-size: 12px;
+  color: #FD1015;
 }

@@ -2,7 +2,7 @@
   <div class="showplace">
     <%# Title of the page %>
     <div class="name-cont col-md-12 col-12">
-      <h2><%= @place.name.capitalize %></h2>
+      <h2 class="text-center mt-4 mb-3"><%= @place.name.capitalize %></h2>
       <p><%= @place.address.capitalize %></p>
       <%= link_to "⬅️ Back", places_path %>
       <% if policy(@place).edit? %>
@@ -29,6 +29,8 @@
             data-markers="<%= @markers.to_json %>"
             data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
+        <br>
+        <br>
       </div>
 
       <%# responsivness %>
@@ -65,22 +67,24 @@
         <div class="col-md-5 col-12 form-info">
           <div class="booking-form sticky-bottom">
             <%= simple_form_for [@place, @order] do |f| %>
-              <%= f.label :checkin, 'Check-in' %>
-              <br>
-              <%= f.date_field :checkin, min: Date.today %>
-              <br>
-              <%= f.label :checkout, 'Check-out' %>
-              <br>
-              <%= f.date_field :checkout %>
-              <br>
-              <% if @order.errors.any? %>
+              <p class="my-4">
+                <%= f.label :checkin, 'Check-in' %>
+                <%= f.date_field :checkin, min: Date.today %>
+              </p>
+              <p class="mt-4 mb-0">
+                <%= f.label :checkout, 'Check-out' %>
+                <%= f.date_field :checkout %>
+              </p>
+              <span class="message_error m-0"><% if @order.errors.any? %>
                 <% @order.errors[:base].each do |msg| %>
                   <%= msg %>
                 <% end %>
-              <% end %>
-              <%= f.input :guest,  as: :numeric, :label => 'Number of Guests' %>
-              <div class="text-center">
-                <%= f.submit 'Book Place', class: 'btn btn-danger'%>
+              <% end %></span>
+              <p class="mt-3">
+                <%= f.input :guest,  as: :numeric, :label => 'Number of Guests' %>
+              </p>
+              <div class="text-center mt-3">
+                <%= f.submit 'Book Place', class: 'btn btn-danger mt-3'%>
               </div>
             <% end %>
           </div>
